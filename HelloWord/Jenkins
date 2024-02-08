@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+    
+    environment {
+        QT_INSTALL_DIR = '/path/to/qt/installation'
+        QT_BIN_DIR = "${QT_INSTALL_DIR}/bin"
+        PATH = "${env.PATH}:${QT_BIN_DIR}"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from version control
+                git 'https://github.com/your/qt/project.git'
+            }
+        }
+        
+        stage('Configure') {
+            steps {
+                // Configure your Qt project
+                sh "qmake -makefile"
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Build the Qt project
+                sh "make"
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests if any
+                // Example: sh "make test"
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Deploy your application or artifacts
+                // Example: sh "make install"
+            }
+        }
+    }
+    
+    post {
+        always {
+            // Clean up steps or notifications
+        }
+    }
+}
