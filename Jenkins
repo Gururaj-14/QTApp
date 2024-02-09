@@ -17,7 +17,6 @@ pipeline {
         stage('Clean') {
             steps {
                 // Configure your Qt project
-                sh 'cd HelloWord'
                 sh 'cd HelloWord  && make clean'
                 echo 'clean'
             }
@@ -26,9 +25,8 @@ pipeline {
             steps {
                 // Configure your Qt project
                 sh 'cd HelloWord'
-
                 sh 'ls'
-                sh 'qmake HelloWord//HelloWord.pro'
+                sh 'qmake HelloWord/HelloWord.pro'
             }
         }
         
