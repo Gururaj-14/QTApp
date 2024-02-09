@@ -17,20 +17,20 @@ pipeline {
         stage('Clean') {
             steps {
                 // Configure your Qt project
-                sh "make clean"
+                sh 'make clean'
             }
         }
         stage('Configure') {
             steps {
                 // Configure your Qt project
-                sh "qmake HelloWord.pro"
+                sh 'qmake HelloWord.pro'
             }
         }
         
         stage('Build') {
             steps {
                 // Build the Qt project
-                sh "make"
+                sh 'make'
             }
         }
         
