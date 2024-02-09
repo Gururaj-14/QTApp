@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code from version control
-                git 'https://github.com/Gururaj-14/QTApp.git'
+                git clone 'https://github.com/Gururaj-14/QTApp.git'
             }
         }
         stage('Clean') {
@@ -25,6 +25,7 @@ pipeline {
         stage('Configure') {
             steps {
                 // Configure your Qt project
+                sh 'ls'
                 sh 'qmake HelloWord.pro'
             }
         }
