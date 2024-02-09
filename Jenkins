@@ -18,6 +18,7 @@ pipeline {
             steps {
                 // Configure your Qt project
                 //sh 'make clean'
+                echo 'clean'
             }
         }
         stage('Configure') {
