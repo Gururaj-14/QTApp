@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    
-    environment {
-        QT_INSTALL_DIR = '/path/to/qt/installation'
-        QT_BIN_DIR = "${QT_INSTALL_DIR}/bin"
-        PATH = "${env.PATH}:${QT_BIN_DIR}"
-    }
+
+    //environment {
+        //QT_INSTALL_DIR = '/path/to/qt/installation'
+        //QT_BIN_DIR = "${QT_INSTALL_DIR}/bin"
+       // PATH = "${env.PATH}:${QT_BIN_DIR}"
+    //}
     
     stages {
         stage('Checkout') {
@@ -14,7 +14,12 @@ pipeline {
                 git 'https://github.com/your/qt/project.git'
             }
         }
-        
+        stage('Clean') {
+            steps {
+                // Configure your Qt project
+                sh "make clean"
+            }
+        }
         stage('Configure') {
             steps {
                 // Configure your Qt project
@@ -41,12 +46,6 @@ pipeline {
                 // Deploy your application or artifacts
                 // Example: sh "make install"
             }
-        }
-    }
-    
-    post {
-        always {
-            // Clean up steps or notifications
         }
     }
 }
