@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code from version control
-                git clone 'https://github.com/Gururaj-14/QTApp.git'
+                git 'https://github.com/Gururaj-14/QTApp.git'
             }
         }
         stage('Clean') {
