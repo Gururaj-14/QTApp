@@ -17,7 +17,7 @@ pipeline {
         stage('Clean') {
             steps {
                 // Configure your Qt project
-                cd HelloWord
+                sh 'cd HelloWord'
                 sh 'make clean'
                 //echo 'clean'
             }
