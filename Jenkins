@@ -28,7 +28,7 @@ pipeline {
                 sh 'cd HelloWord'
 
                 sh 'ls'
-                sh 'qmake HelloWord.pro'
+                sh 'qmake HelloWord//HelloWord.pro'
             }
         }
         
