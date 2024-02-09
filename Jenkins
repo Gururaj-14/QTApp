@@ -17,7 +17,7 @@ pipeline {
         stage('Clean') {
             steps {
                 // Configure your Qt project
-                sh 'make clean'
+                //sh 'make clean'
             }
         }
         stage('Configure') {
