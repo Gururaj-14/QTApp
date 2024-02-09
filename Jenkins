@@ -38,6 +38,7 @@ pipeline {
             steps {
                 // Run tests if any
                 // Example: sh "make test"
+                 echo 'Tested'
             }
         }
         
@@ -45,6 +46,7 @@ pipeline {
             steps {
                 // Deploy your application or artifacts
                 // Example: sh "make install"
+                   echo 'Deploy'
             }
         }
     }
