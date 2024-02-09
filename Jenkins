@@ -23,7 +23,7 @@ pipeline {
         stage('Configure') {
             steps {
                 // Configure your Qt project
-                sh "qmake -makefile"
+                sh "qmake HelloWord.pro"
             }
         }
         
